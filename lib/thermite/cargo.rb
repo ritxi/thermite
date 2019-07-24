@@ -28,7 +28,7 @@ module Thermite
     # Path to `cargo`. Can be overwritten by using the `CARGO` environment variable.
     #
     def cargo
-      @cargo ||= find_executable(ENV.fetch('CARGO', 'cargo'))
+      @cargo ||= find_executable(ENV.fetch('CARGO', 'cargo'), ENV.fetch('CARGO_BIN_PATH', nil))
     end
 
     #
